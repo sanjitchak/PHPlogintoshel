@@ -21,7 +21,15 @@ ini_set('display_startup_errors', 1);
         }
 
       }
-    
+      if ($_SERVER['SERVER_ADDR'] == "107.161.76.74") {
+        echo '<p style="text-align:center;" > Old Server. </p>';
+      }
+      else if($_SERVER['SERVER_ADDR'] == "107.161.78.196") {
+        echo '<p style="text-align:center;" > Backup Server. </p>';
+      }
+      else {
+        echo '<p style="text-align:center;" > I am not sure about the server. </p>';
+      }
 ?>
 <!DOCTYPE html>
 <html>
