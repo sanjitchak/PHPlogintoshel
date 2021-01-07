@@ -13,8 +13,9 @@ error_reporting(E_ALL);
             $_POST['hour'] = filter_var($_POST['hour'], FILTER_SANITIZE_NUMBER_INT	);
            
             $hour = $_POST['hour'];
-//execute in background
-        $output = shell_exec("sudo /usr/local/vesta/bin/v-restore-user admin `ls /backup | tail -n $hour` & ");
+//execute in background. 
+// TAIL is to get newest files then HEAD to get the oldest files from those newest files
+        $output = shell_exec("sudo /usr/local/vesta/bin/v-restore-user admin `ls /backup/admin.* | tail -n $hour | head -n 1` & ");
 
         if ($output)
         {
