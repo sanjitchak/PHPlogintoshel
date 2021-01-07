@@ -21,9 +21,8 @@ error_reporting(E_ALL);
 
         if ($output)
         {
-            echo $script;
-            echo $output;
-           // header('LOCATION: done.php'); die();
+         
+       header('LOCATION: done.php'); die();
         }
         else {
             echo $script;
