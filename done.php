@@ -5,6 +5,8 @@
     <title>Too fast! Restore may not have happened. Contact Sanjit at https://growonlinetoday.com/calendar</title>
 </head>
 <body>
-Too fast!
+Too fast! Restore may not have happened. Contact Sanjit at <a href="https://growonlinetoday.com/calendar">https://growonlinetoday.com/calendar</a> 
+<br>
+<p>He is a good guy. Be open to him.</p>
 </body>
 </html>

@@ -13,16 +13,22 @@ error_reporting(E_ALL);
             $_POST['hour'] = filter_var($_POST['hour'], FILTER_SANITIZE_NUMBER_INT	);
            
             $hour = $_POST['hour'];
+
+            $script = ' cd /backup/ &&  sudo /usr/local/vesta/bin/v-restore-user admin  $(ls admin.* | tail -n '. "$hour | head -n 1)";
 //execute in background. 
 // TAIL is to get newest files then HEAD to get the oldest files from those newest files
-        $output = shell_exec("sudo /usr/local/vesta/bin/v-restore-user admin `ls /backup/admin.* | tail -n $hour | head -n 1` & ");
+        $output = shell_exec($script);
 
         if ($output)
         {
-            header('LOCATION: done.php'); die();
+            echo $script;
+            echo $output;
+           // header('LOCATION: done.php'); die();
         }
         else {
-            echo "Error!! Contact Sanjit please at https://growonlinetoday.com/calendar ";
+            echo $script;
+            echo $output;
+            echo "Error!! Try Again or Contact Sanjit please at https://growonlinetoday.com/calendar ";
         }
 
     }
